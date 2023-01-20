@@ -1,0 +1,13 @@
+<div class="custom-input-container">
+    <input
+        [(ngModel)]="value"
+        (ngModelChange)="modelChanged()"
+        class="custom-input"
+        [class.with-button]="withButton">
+    <span
+        *ngIf="withButton"
+        class="material-icons-outlined input-button"
+        (click)="actionButtonClicked()">
+        close
+    </span>
+</div>

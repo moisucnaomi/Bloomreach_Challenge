@@ -1,0 +1,21 @@
+<div class="month-container">
+    <div
+        *ngFor="let day of days"
+        class="day"
+        [class.selected]="day.selected"
+        (click)="toggleDay(day)">
+        {{day.value}}
+    </div>
+    <div
+        class="day last-day"
+        [class.selected]="lastDay.selected"
+        (click)="toggleDay(lastDay)">
+        {{ lastDay.value }}
+    </div>
+</div>
+<div class="time-container">
+    <time-input 
+        [(value)]="time"
+        (valueChange)="updateTime()">
+    </time-input>
+</div>

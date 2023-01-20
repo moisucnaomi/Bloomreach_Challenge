@@ -1,0 +1,7 @@
+@import './styles/shared.scss';
+@import './styles/colors';
+
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+}

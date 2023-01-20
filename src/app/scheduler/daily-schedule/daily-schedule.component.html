@@ -1,0 +1,14 @@
+<div class="schedule-container">
+    <span>At</span>
+    <div
+        *ngFor="let value of values; let i = index; trackBy: trackByFn"
+        class="minutes-input">
+        <time-input
+            [(value)]="values[i]"
+            (valueChange)="updateValues()"
+            [withButton]="values.length > 1"
+            (actionButton)="removeValue(i)">
+        </time-input>
+    </div>
+    <span class="add-button" (click)="addValue()">+ Add time</span>
+</div>

@@ -1,0 +1,37 @@
+<div class="scheduler-container">
+    <div class="type-container">
+        <ng-container *ngFor="let scheduleType of scheduleTypeList">
+            <custom-radio
+                [label]="scheduleType"
+                [checked]="scheduleType === selectedType"
+                (change)="setScheduleType(scheduleType)">
+            </custom-radio>
+        </ng-container>
+    </div>
+    <container-element [ngSwitch]="selectedType">
+        <hourly-schedule
+            *ngSwitchCase="scheduleTypeEnum.HOURLY"
+            [(values)]="schedule.values"
+            (valuesChange)="scheduleChanged()">
+        </hourly-schedule>
+        <daily-schedule
+            *ngSwitchCase="scheduleTypeEnum.DAILY"
+            [(values)]="schedule.values"
+            (valuesChange)="scheduleChanged()">
+        </daily-schedule>
+        <weekly-schedule
+            *ngSwitchCase="scheduleTypeEnum.WEEKLY"
+            [(selectedDays)]="schedule.values"
+            (selectedDaysChange)="scheduleChanged()"
+            [(time)]="schedule.time"
+            (timeChange)="scheduleChanged()">
+        </weekly-schedule>
+        <monthly-schedule
+            *ngSwitchCase="scheduleTypeEnum.MONTHLY"
+            [(selectedValues)]="schedule.values"
+            (selectedValuesChange)="scheduleChanged()"
+            [(time)]="schedule.time"
+            (timeChange)="scheduleChanged()">
+        </monthly-schedule>
+    </container-element>
+</div>

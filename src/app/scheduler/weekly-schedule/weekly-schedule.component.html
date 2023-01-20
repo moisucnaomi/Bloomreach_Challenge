@@ -1,0 +1,15 @@
+<div class="week-container">
+    <ng-container *ngFor="let weekDay of weekDaysList">
+        <custom-checkbox
+            [label]="weekDay.value"
+            [checked]="weekDay.selected"
+            (change)="changeSelected(weekDay)">
+        </custom-checkbox>
+    </ng-container>
+</div>
+<div class="time-container">
+    <time-input
+        [(value)]="time"
+        (valueChange)="updateTime()">
+    </time-input>
+</div>

@@ -1,0 +1,15 @@
+<div class="custom-input-container">
+    <span class="material-icons-outlined input-icon">schedule</span>
+    <input
+        type="time"
+        [(ngModel)]="value"
+        (change)="modelChanged()"
+        class="custom-input"
+        [class.with-button]="withButton">
+    <span
+        *ngIf="withButton"
+        class="material-icons-outlined input-button"
+        (click)="actionButtonClicked()">
+        close
+    </span>
+</div>

@@ -1,0 +1,34 @@
+.month-container {
+    position: relative;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(7,36px);
+    justify-items: center;
+    row-gap: 12px;
+    font-size: 14px;
+    margin-bottom: 35px;
+
+    .day{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            background-color: var(--gray);
+        }
+        &.selected {
+            background-color: var(--primary-color);
+        }
+    }
+
+    .last-day {
+        position: absolute;
+        bottom: 0px;
+        right: 64px;
+        width: 77px;
+        border-radius: 10px;
+    }
+}

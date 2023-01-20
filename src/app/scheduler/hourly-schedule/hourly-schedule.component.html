@@ -1,0 +1,17 @@
+<div class="schedule-container">
+    <span>Minutes</span>
+    <div
+        *ngFor="let value of values; let i=index; trackBy: trackByFn"
+        class="minutes-input">
+        <custom-input
+            type="number"
+            [(value)]="values[i]"
+            (valueChange)="updateValues()"
+            [maxNumber]="60"
+            [minNumber]="0"
+            [withButton]="values.length > 1"
+            (actionButton)="removeValue(i)">
+        </custom-input>
+    </div>
+    <span class="add-button" (click)="addValue()">+ Add minutes</span>
+</div>
